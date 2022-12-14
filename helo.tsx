@@ -1,3 +1,11 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react';
 
-export default ({name})=> <h1> hello {name}</h1>;
+export default class hello extends Component {
+  render() {
+    return (
+      <div>
+        <h1> hello {this.props.name}</h1>
+      </div>
+    );
+  }
+}

@@ -1,32 +1,33 @@
 import * as React from 'react';
 import './style.css';
 import Hello from './helo'
-class App extends React.Component{
-constructor(){
-  super();
-this.state={
-  name:'dina',
-  value:null
-};
-}
- 
-  onClick=()=>{
-    const name=this.state.name==='dina'?"react":"dina";
-    this.setState({name})
-  }
-  value=(event)=>{
+import {BrowserRouter,Route, Routes} from 'react-router-dom';
 
-    this.setState({value:event.target.value});
+const Home=()=>{
+  return <div> home </div>;
+}
+
+  const re=()=>{
+    return <div> re </div>;
   }
+
+    const te=()=>{
+      return <div> te </div>;
+    }
+
+class App extends React.Component{
+
   render(){
     return(
-      <div>
-        <Hello name={this.state.name}/>
-        <input type="text" onChange={this.value.bind(this)}/>
-        <button onClick={this.onClick}>clickme</button>
-        {this.state.value}
-
-        </div>
+      <BrowserRouter>
+     <div >welcome
+      <Routes>
+       <Route path="/" component={Home}/>
+       <Route exact path="/test" component={te}/>
+       
+     </Routes>
+     </div>
+        </BrowserRouter>
     )
   }
 }
