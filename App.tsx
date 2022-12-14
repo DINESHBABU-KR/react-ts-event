@@ -12,7 +12,7 @@ this.state={
  
   onClick=()=>{
     const name=this.state.name==='dina'?"react":"dina";
-    this.setState({name})
+    this.setState({name,value:'test'})
   }
   value=(event)=>{
 
@@ -22,7 +22,7 @@ this.state={
     return(
       <div>
         <Hello name={this.state.name}/>
-        <input type="text" onChange={this.value.bind(this)}/>
+        <input type="text" value={this.state.value} onChange={this.value.bind(this)}/>
         <button onClick={this.onClick}>clickme</button>
         {this.state.value}
 
